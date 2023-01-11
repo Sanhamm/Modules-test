@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilities</title>
+    <script type="module" src="index.js" defer></script>
+</head>
+<body>
+    <h1>Utilities</h1>
+
+    <hr>
+    <h2>Fibonacci numbers</h2>
+    <label for="fib">
+        Find the n fibonacci number
+    </label>
+    <input name="fib" id="fib" type="number" min="0" max="100">
+    <button type="submit" id="submit-fib">Get F<sub>n</sub></button>
+    <span id="fib-result"></span>
+    <hr>
+
+    <h2>Temperature convert</h2>
+    <p>Converter</p>
+    <input type="number" name="temp" id="temp">
+    <input type="radio" name="temp-type" id="celcius">
+    <label for="celcius">°C</label>
+    <input type="radio" name="temp-type" id="farenheit">
+    <label for="farenheit">°F</label>
+    <button type="submit" id="submit-temp">Convert</button>
+    <span id="temp-result"></span>
+    <hr>
+
+    <h2>Currency converter</h2>
+    <input type="number" name="amount" id="amount">
+    <select name="convertFrom" id="convertFrom">
+        <option selected>Nok</option>
+        <option>EUR</option>
+        <option>GBP</option>
+        <option>USD</option>
+    </select>
+    <select name="convertTo" id="convertTo">
+        <option>Nok</option>
+        <option>EUR</option>
+        <option selected>GBP</option>
+        <option>USD</option>
+    </select>
+    <button type="submit" id="submit-currency">Conevrt</button>
+    <span id="currency-result"></span>
+
+
+
+</body>
+</html>
