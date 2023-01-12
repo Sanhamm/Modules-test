@@ -32,23 +32,47 @@
     <hr>
 
     <h2>Currency converter</h2>
-    <input type="number" name="amount" id="amount">
-    <select name="convertFrom" id="convertFrom">
-        <option selected>Nok</option>
+    <input type="number" name="amount" id="amount" placeholder="100">
+    <label for="convertFrom">From:</label>
+    <input list="convertFromSymbols" id="convertFrom" name="convertFrom" placeholder="Type a currency">
+    <datalist id="convertFromSymbols">
+        <option value="NOK">Norske Kroner(Nok)</option>
         <option>EUR</option>
         <option>GBP</option>
         <option>USD</option>
-    </select>
-    <select name="convertTo" id="convertTo">
+    </datalist>
+
+    <label for="convertTo">To:</label>
+    <input list="convertToSymbols" id="convertTo" name="convertTo" placeholder="Type a currency">
+    <datalist id="convertToSymbols">
         <option>Nok</option>
         <option>EUR</option>
-        <option selected>GBP</option>
+        <option>GBP</option>
         <option>USD</option>
-    </select>
-    <button type="submit" id="submit-currency">Conevrt</button>
+    </datalist>
+
+    <button type="submit" id="submit-currency">Convert</button>
     <span id="currency-result"></span>
+    <hr>
+
+    <h2>Filter search amiibo</h2>
+    <input id="search-amiibos" name="search-amiibos" placeholder="Search for a amiibo">
+    <label for="amiibo-name">Full name</label>
+    <input id="amiibo-name" type="checkbox" name="amiibo-name">
+
+    <label for="amiibo-game">Game series</label>
+    <input id="amiibo-game" type="checkbox" name="amiibo-game">
+
+    <label for="amiibo-series">Amiibo series</label>
+    <input id="amiibo-series" type="checkbox" name="amiibo-series">
+
+    <button id="openAll">Open all boxes</button>
+    <button id="closeAll">close all boxes</button>
 
 
+    <div id="amiibos" style="display: grid; grid-template-columns: auto auto auto auto; margin-top: 20px;"></div>
 
+    <hr>
+    <p>HIHI</p>
 </body>
 </html>

@@ -1,6 +1,8 @@
 import fibonacci from "./script/fibonacci.mjs";
 import { celsiusToFarenheit, farenheitToCelsius } from "./script/temperature.mjs";
 import { currencyConverter, getAllCurrencies } from "./script/currency.mjs";
+import { getAllAmiibos, filterAmiibos } from "./script/amiibo.mjs";
+
 
 //fibonacci converter
 document.getElementById("submit-fib").addEventListener("click", () => {
@@ -43,4 +45,53 @@ document.getElementById("submit-currency").addEventListener('click', () => {
 
 })
 
-getAllCurrencies()
+const fromCurrencylist = document.getElementById("convertFromSymbols")
+const toCurrencylist = document.getElementById("convertToSymbols")
+getAllCurrencies(fromCurrencylist, toCurrencylist)
+
+//Amiibo
+
+const outPutElement = document.getElementById("amiibos")
+getAllAmiibos(outPutElement)
+
+let searchBox = document.getElementById("search-amiibos")
+searchBox.addEventListener('input', updateSearch)
+
+let nameCheckBox = document.getElementById("amiibo-name")
+nameCheckBox.addEventListener('input', updateSearch)
+
+let gameSeriesBox = document.getElementById("amiibo-game")
+gameSeriesBox.addEventListener('input', updateSearch)
+
+let amiiboSeriesBox = document.getElementById("amiibo-series")
+amiiboSeriesBox.addEventListener('input', updateSearch)
+
+
+function updateSearch() {
+    let searchString = searchBox.value;
+    let nameOpt = nameCheckBox.checked;
+    let GameSeriesOpt = gameSeriesBox.checked;
+    let amiiboSeriesOpt = amiiboSeriesBox.checked;
+    
+    let options = {nameOpt, GameSeriesOpt, amiiboSeriesOpt}
+
+    //console.log(`search for ${searchString}`, options);
+    filterAmiibos(searchString, outPutElement, options);
+}
+
+document.getElementById("openAll").addEventListener('click', () => {
+    toggleDetails("open")
+})
+document.getElementById("closeAll").addEventListener('click', () => {
+    toggleDetails("close")
+
+})
+
+function toggleDetails(mode){
+    let detailsElements = document.querySelectorAll("details");
+    //console.log(detailsElements.length);
+    for( let element of detailsElements) {
+        if (mode === 'open') element.setAttribute('open', true)
+        if (mode === 'close') element.removeAttribute('open')
+    }
+}
