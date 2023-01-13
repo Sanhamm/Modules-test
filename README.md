@@ -21,3 +21,9 @@ the go in package.json an add
 ````
 under "scripts
 
+use
+````
+npm run build
+```
+to build an dist file.
+
