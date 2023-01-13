@@ -1,3 +1,4 @@
+import "./style.css"
 import fibonacci from "./script/fibonacci.mjs";
 import { celsiusToFarenheit, farenheitToCelsius } from "./script/temperature.mjs";
 import { currencyConverter, getAllCurrencies } from "./script/currency.mjs";

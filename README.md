@@ -62,4 +62,28 @@ in terminal to run the build so it makes a dist file with index.html and main.js
 The problem with webpack is that it takes the index.js with it that we use at  
  live server. u just have to go in your index.html at remove or comment out the script line at build again.
 
+´´´
+npm install --save-dev style-loader css-loader
+´´´
+
+To make css in webapck...  
+
+go in your webpack.config.js file and add 
+
+'''
+module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
+'''
+
+so you dont get an error when using 
+´´´
+npm run build
+´´´
+
 
