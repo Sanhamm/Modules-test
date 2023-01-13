@@ -6,26 +6,26 @@ This is a test repo that will help me understand modules before starting on Reac
 start the to use webpack by using the terminal.
 
 ´´´
-npm init -y
+ npm init -y
 ´´´
 
 in terminal to make an package.json file
 
 ´´´
-npm install webpack webpack-cli --save-dev
+ npm install webpack webpack-cli --save-dev
 ´´´
 
 in terminal to install webpack at dev
 
 ´´´
-npm install --save-dev html-webpack-plugin
+ npm install --save-dev html-webpack-plugin
 ´´´
 
 in terminal to install html webpack
 
 then go into package.json at script and write 
 ´´´
-"build": "webpack"
+ "build": "webpack"
 ´´´
 
 
