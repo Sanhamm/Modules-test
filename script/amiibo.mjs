@@ -3,7 +3,7 @@ let amiibos = []; //container
 export async function getAllAmiibos(out) {
     out.innerHTML = "Loading..."
 
-    const apiURL = "https://www.amiiboapi.com/api/amiibo";
+    const apiURL = "https://www.amiiboapi.com/api/amiibo/";
     fetch(apiURL)
     .then((response) => response.json())
     .then((data) => {
